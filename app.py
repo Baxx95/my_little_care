@@ -86,7 +86,7 @@ Nom=st.text_input('Nom : ')
 st.subheader("État actuel de la chevelure :")
 rep1 = st.selectbox(
         'Comment sont vos cheveux naturellement ?',
-         ['Lisses', 'Ondulés','bouclés', 'frisés'])
+         ['Caucasiens', 'Métissés','Crépus'])
 
 rep2 = st.selectbox(
         'Vos cheveux sont actuellement :',

@@ -67,7 +67,7 @@ def tab_input_v2(desc):
     return [desc.count(mot)/nombre_de_mots if nombre_de_mots != 0 else 0 for mot in mots_elements]
 #-------------------------------------------------------
 img = Image.open("new_logo.png") 
-st.image(img, width=200)
+st.image(img, width=300)
 
 #-------------------------------------------------------
 

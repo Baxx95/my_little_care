@@ -66,7 +66,7 @@ def tab_input_v2(desc):
     nombre_de_mots = len(desc)
     return [desc.count(mot)/nombre_de_mots if nombre_de_mots != 0 else 0 for mot in mots_elements]
 #-------------------------------------------------------
-img = Image.open("my_little_care.jpg") 
+img = Image.open("new_logo.png") 
 st.image(img, width=200)
 
 #-------------------------------------------------------
@@ -77,23 +77,19 @@ age = st.selectbox(
          list(range(1,105)))
 'vous avez choisi: ', age
 genre = st.radio(
-        'Quel est votre sexe ?',
+        'Quel est votre genre ?',
         ("Femme", "Homme", "Non Binaire"))
 Nom=st.text_input('Nom : ')
 "Nom : ", Nom
-Prenom=st.text_input('Prenom : ')
-"Prenom : ", Prenom
-num_tel=st.text_input('Numero de téléphone : ')
-'Numero de téléphone : ', num_tel
 
 #-------------------------------------------------------
 st.subheader("État actuel de la chevelure :")
 rep1 = st.selectbox(
-        'Comment sont vos cheuveux naturellement ?',
+        'Comment sont vos cheveux naturellement ?',
          ['Lisses', 'Ondulés','bouclés', 'frisés'])
 'vous avez choisi: ', rep1
 rep2 = st.selectbox(
-        'Vos cheuveux sont actuellement :',
+        'Vos cheveux sont actuellement :',
          ['Lissés', 'colorés','permanentés', 'Naturels', 'Méchés'])
 'vous avez choisi: ', rep2
 rep3 = st.selectbox(
@@ -121,11 +117,11 @@ if rep7 == "Oui":
          ['Pelade','Alopécie','Kyste'])
     'Vous avez choisi: ', rep8 
 
-image_cheveux = st.file_uploader("Envoyez- nous une photo de vos cheveux pour un diagnostic plus précis (Optionnel)")
+image_cheveux = st.file_uploader("Envoyez - nous une photo de vos cheveux pour un diagnostic plus précis (Optionnel)")
 if image_cheveux is not None:
     # To read file as bytes:
     bytes_data = image_cheveux.getvalue()
-    st.write(bytes_data)
+    #st.write(bytes_data)
     
 
 #-----------------------------------------------------------
@@ -152,7 +148,7 @@ rep13 = st.multiselect(
     'Sélectionnez jusqu’à 3 objectifs:',
     ['Réparation','Hydratation','Protection de la couleur','Boucles rebondies',
     'Soin du cuir chevelu','Lissage','Volume'],)
-'You selected:', rep13
+'Vous avez choisi:', rep13
 #-----------------------------------------------------------
 st.subheader("Futurs soins")
 rep14 = st.selectbox(
@@ -192,8 +188,6 @@ rep20 = st.radio(
 inputs = [rep1,rep2,rep3,rep4,rep5,rep6,rep7,rep8,rep9,rep10,rep11,rep12, rep13,rep14,rep15,rep16,rep17,rep18,rep19,rep20]
     
 if st.button('Validez'):
-
-        st.write(cosij(tab_prod.loc[0].values[1:],tab_input_v2(inputs)))
         d={}
         for i in tab_prod.index:
             d[tab_prod["Unnamed: 0"].loc[i]] = cosij(tab_prod.loc[i].values[1:],tab_input_v2(inputs))

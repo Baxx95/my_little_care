@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
+import streamlit as st
+import pandas as pd
+from PIL import Image
+
 #-------------------------------------------------------
 tab_prod = pd.read_csv("df2_v3.csv")
 df_data = pd.read_csv('donnes_labaled_type_produit.csv')
@@ -100,8 +104,8 @@ rep4 = st.selectbox(
         "Quelle est la longueur de vos cheveux ?",
          ['Long','Court','Au épaules'])
 
-rep5 = st.selectbox(
-        'Comment est votre cuir chevelu ?',
+rep5 = st.multiselect(
+    "Quel l'état de votre cuir chevelu?\nSélectionnez jusqu’à 2 :",
          ['Sec', 'Gras','Pelliculaire', 'irrité', 'Sain'])
    
 rep6 = st.selectbox(
@@ -147,7 +151,7 @@ st.subheader("Objectifs")
 rep13 = st.multiselect(
     'Sélectionnez jusqu’à 3 objectifs:',
     ['Réparation','Hydratation','Protection de la couleur','Boucles rebondies',
-    'Soin du cuir chevelu','Lissage','Volume'],)
+    'Soin du cuir chevelu','Lissage','Volume'])
 
 #-----------------------------------------------------------
 st.subheader("Futurs soins")
@@ -180,13 +184,25 @@ rep19 = st.selectbox(
 rep20 = st.radio(
         'Êtes-vous enceinte ou allaitante ?',
         ("Oui", "Non"))
- 
-
 
 #     option = 'liss' if option=='Lisses' else 'ondulé' if option=='Ondulés' else 'boucl' if option=='bouclés' else 'fri'
 #     option1 = 'sec' if option1=='Sec' else 'gra' if option1=='Gras' else 'pellicul' if option1=='Pelliculaire' else 'irrit' if option1=='irrité' else option1
 inputs = [rep1,rep2,rep3,rep4,rep5,rep6,rep7,rep8,rep9,rep10,rep11,rep12, rep13,rep14,rep15,rep16,rep17,rep18,rep19,rep20]
+
+def diagnostic(rep1,rep5,rep6):
+    if rep1 == 'Crépus' and 'Sec' in rep5 and rep6 == 'faible porosité':
+        rep = "Vous semblez avoir un problème d'hydratation et de production ou de rétention de sébum.\nVeuillez donc prendre unn rendez-vous avec l'un nos experts pour discuter de la solution."
+    elif rep1 == 'Crépus' and 'Gras' in rep5 and rep6 == 'faible porosité':
+        rep = "Vous semblez avoir un problème d'absortion et de rétention de corps gras externe à la surface de votre fibre capillaire.\nVeuillez donc prendre un rendez-vous avec l'un nos experts pour discuter de la solution."
+    elif rep1 == 'Crépus' and ('Sec' in rep5 and 'Pelliculaire' in rep5) and rep6 == 'faible porosité':
+        rep = "Vous semblez avoir un problème de production de sébum et d'absortion de corps gras externe et d'eau à la surface de votre fibre capillaire.\nVeuillez donc prendre un rendez-vous avec l'un nos experts pour discuter de la solution."
+    elif rep1 == 'Crépus' and ('Gras' in rep5 and 'Pelliculaire' in rep5) and rep6 == 'faible porosité':
+        rep = "Vous semblez avoir un problème de production de sébum et d'absortion de corps gras externe et d'eau à la surface de votre fibre capillaire.\nVeuillez donc prendre un rendez-vous avec l'un nos experts pour discuter de la solution."
+    else:
+        rep = "Vous semblez ne pas avoir un problème particulier, mais un objectif à atteindre.\nVeuillez donc prendre un rendez-vous avec l'un nos experts pour discuter de la solution.\n"
     
+    return rep
+
 if st.button('Validez'):
         d={}
         for i in tab_prod.index:
@@ -204,6 +220,6 @@ if st.button('Validez'):
         prods = [typ.strip() for typ in prods]
         nb_prod = df_data[df_data.type_produit_traite == prods[0]].shape[0] + df_data[df_data.type_produit_traite == prods[1]].shape[0]
 
-        st.write("Nous avons dans notre base d'articles", nb_prod, "de type ",ch[:-2]," , qui vous permettront d'atteindre vos objectifs.\nVeuillez prendre rendez-vous avec nos experts pour plus de détails sur les produts et leurs utilisations.")
-       
-
+        st.write(diagnostic(rep1,rep5,rep6))
+#         st.write("Nous avons dans notre base d'articles", nb_prod, "de type ",ch[:-2]," , qui vous permettront d'atteindre vos objectifs.\nVeuillez prendre rendez-vous avec nos experts pour plus de détails sur les produts et leurs utilisations.")
+        

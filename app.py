@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-from streamlit_option_menu import option_menu
-import numpy as np
-import re
-#import smtplib
 
 #-------------------------------------------------------
 tab_prod = pd.read_csv("df2_v3.csv")
@@ -128,7 +124,7 @@ if rep7 == "Oui":
 image_cheveux = st.file_uploader("Envoyez- nous une photo de vos cheveux pour un diagnostic plus précis (Optionnel)")
 if image_cheveux is not None:
     # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
+    bytes_data = image_cheveux.getvalue()
     st.write(bytes_data)
     
 
@@ -196,12 +192,11 @@ rep20 = st.radio(
 inputs = [rep1,rep2,rep3,rep4,rep5,rep6,rep7,rep8,rep9,rep10,rep11,rep12, rep13,rep14,rep15,rep16,rep17,rep18,rep19,rep20]
     
 if st.button('Validez'):
-        st.write(inputs)
+
         st.write(cosij(tab_prod.loc[0].values[1:],tab_input_v2(inputs)))
         d={}
         for i in tab_prod.index:
             d[tab_prod["Unnamed: 0"].loc[i]] = cosij(tab_prod.loc[i].values[1:],tab_input_v2(inputs))
-        #st.write(d)
         
         d_sorted = sorted(d.items(), key=lambda t: t[1], reverse=True)
         ch=''
@@ -213,27 +208,8 @@ if st.button('Validez'):
         
         prods = ch[:-2].split(',')
         prods = [typ.strip() for typ in prods]
-        prods
         nb_prod = df_data[df_data.type_produit_traite == prods[0]].shape[0] + df_data[df_data.type_produit_traite == prods[1]].shape[0]
 
         st.write("Nous avons dans notre base d'articles", nb_prod, "de type ",ch[:-2]," , qui vous permettront d'atteindre vos objectifs.\nVeuillez prendre rendez-vous avec nos experts pour plus de détails sur les produts et leurs utilisations.")
-        
-
-
-
-# server = smtplib.SMTP('smtp.gmail.com', 587)
-# server.connect("smtp.example.com",465)
-
-# #Ensuite, connectez-vous au serveur Gmail
-# server.login("zacariag96@gmail.com", "password")
-
-# #Le message à envoyer
-# msg = "Hello!" 
-
-# #Envoyez le mail
-# server.sendmail("zacariag96@gmail.com", "destination@mail.com", msg)
-
-# server.quit()
-
-
+       
 

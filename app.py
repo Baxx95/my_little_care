@@ -74,7 +74,7 @@ st.image(img, width=200)
 st.subheader("Informations personnelles :")
 age = st.selectbox(
         'Quel âge avez-vous ?',
-         [range(1,105)])
+         list(range(1,105)))
 'vous avez choisi: ', age
 genre = st.radio(
         'Quel est votre sexe ?',

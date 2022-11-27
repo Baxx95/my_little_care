@@ -76,7 +76,7 @@ age = st.selectbox(
          list(range(1,105)))
 
 genre = st.radio(
-        'Quel est votre genre ?',
+        'Quel est votre sexe ? ',
         ("Femme", "Homme", "Non Binaire"))
 
 Nom=st.text_input('Nom : ')
@@ -96,15 +96,15 @@ rep2 = st.selectbox(
          ['Lissés', 'colorés','permanentés', 'Naturels', 'Méchés'])
 
 rep3 = st.selectbox(
-        "Quel est l'épaisseur de vos cheveux ?",
-         ['cheveux pas epais','cheveux moyennement epai','cheuveux epai'])
+        "Quelle est l’épaisseur de vos cheveux ?",
+         ['Fins','cheveux moyennement epais','cheuveux epais'])
  
 rep4 = st.selectbox(
         "Quelle est la longueur de vos cheveux ?",
-         ['Long','Court','Au épaules'])
+         ['Longs','Courts','Aux épaules'])
 
 rep5 = st.multiselect(
-    "Quel est l'état de votre cuir chevelu? \nSélectionnez jusqu’à 2 :",
+    "Comment est votre cuir chevelu ? \nSélectionnez jusqu’à 2 :",
          ['Sec', 'Gras','Pelliculaire', 'irrité', 'Sain'])
    
 rep6 = st.selectbox(
@@ -128,7 +128,7 @@ if image_cheveux is not None:
 #-----------------------------------------------------------
 st.subheader("Routine capillaire ")
 rep9 = st.selectbox(
-        'A quelle fréquence vous lavez vous les cheveux ?',
+        'Combien de fois lavez-vous vos cheveux ?',
          ['tous les jours','tous les 2-3 jours', '1 fois par semaine'])
 
 rep10 = st.selectbox(
@@ -153,7 +153,7 @@ rep13 = st.multiselect(
 #-----------------------------------------------------------
 st.subheader("Futurs soins")
 rep14 = st.selectbox(
-        'Quels produits voudriez-vous inclure dans votre routine ?',
+        'Quels produits aimeriez-vous ajouter à votre routine ?',
          ["Soin de nuit", "Shampoing sec" ,"Sérum cuir chevelu","Huile pour cheveux", "Lait"])
 
 rep15 = st.selectbox(
@@ -172,7 +172,7 @@ rep17 = st.selectbox(
 
 rep18 = st.selectbox(
         'Comment définiriez-vous votre alimentation ?',
-         ["Saine", "Junkfood" ,"Fléxitarien","Végétarien", "Végétalien"])
+         ["Saine", "Junkfood" ,"Flexitarien","Végétarien", "Végétalien"])
 
 rep19 = st.selectbox(
         'Vous évoluez dans un environnement :',

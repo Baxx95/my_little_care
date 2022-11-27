@@ -129,19 +129,19 @@ if image_cheveux is not None:
 st.subheader("Routine capillaire ")
 rep9 = st.selectbox(
         'Combien de fois lavez-vous vos cheveux ?',
-         ['tous les jours','tous les 2-3 jours', '1 fois par semaine'])
+         ['Tous les jours','Tous les 2-3 jours', '1 fois par semaine'])
 
 rep10 = st.selectbox(
         'Qu’est ce que vous utilisez généralement pour coiffer vos cheveux ?',
-         ['gel', 'fer à lisser', 'mousse', 'fer à boucler', 'laque', 'spray'])
+         ['Gel', 'Fer à lisser', 'Mousse', 'Fer à boucler', 'Laque', 'Spray'])
 
 rep11 = st.selectbox(
         'Sélectionnez l’un des traitements que vous avez actuellement ou que vous prévoyez d’avoir dans les prochaines semaines',
-         ['lait', 'masque', 'huiles', 'soins sans rinçage', 'shampooing sec', 'après shampooing'])
+         ['Lait', 'Masque', 'Huiles', 'Soins sans rinçage', 'Shampooing sec', 'Après shampooing'])
 
 rep12 = st.selectbox(
         'Colorez vous ou décolorez-vous vos cheveux ?',
-         ['parfois','souvent','non'])
+         ['Parfois','Souvent','Non'])
 
 #-----------------------------------------------------------
 st.subheader("Objectifs")
@@ -154,7 +154,7 @@ rep13 = st.multiselect(
 st.subheader("Futurs soins")
 rep14 = st.selectbox(
         'Quels produits aimeriez-vous ajouter à votre routine ?',
-         ["Soin de nuit", "Shampoing sec" ,"Sérum cuir chevelu","Huile pour cheveux", "Lait"])
+         ["Soin de nuit","Shampoing sec","Sérum cuir chevelu","Huile pour cheveux","Lait"])
 
 rep15 = st.selectbox(
         'Quel budget avez-vous par mois ?',
@@ -164,15 +164,15 @@ rep15 = st.selectbox(
 st.subheader("Lifestyle")
 rep16 = st.selectbox(
         'Où vivez-vous ?',
-         ["Campagne", "Urbain" ,"Péri-urbain"])
+         ["Campagne","Urbain","Péri-urbain"])
 
 rep17 = st.selectbox(
         'Quel est le temps moyen dans votre région ?',
-         ["Ensoleillé", "Neigeux" ,"Pluvieux","Nuageux"])
+         ["Ensoleillé","Neigeux","Pluvieux","Nuageux"])
 
 rep18 = st.selectbox(
         'Comment définiriez-vous votre alimentation ?',
-         ["Saine", "Junkfood" ,"Flexitarien","Végétarien", "Végétalien"])
+         ["Saine","Junkfood","Flexitarien","Végétarien","Végétalien"])
 
 rep19 = st.selectbox(
         'Vous évoluez dans un environnement :',

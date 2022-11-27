@@ -184,7 +184,7 @@ rep20 = st.radio(
 
 #     option = 'liss' if option=='Lisses' else 'ondulé' if option=='Ondulés' else 'boucl' if option=='bouclés' else 'fri'
 #     option1 = 'sec' if option1=='Sec' else 'gra' if option1=='Gras' else 'pellicul' if option1=='Pelliculaire' else 'irrit' if option1=='irrité' else option1
-inputs = [rep1,rep2,rep3,rep4,rep5,rep6,rep7,rep8,rep9,rep10,rep11,rep12, rep13,rep14,rep15,rep16,rep17,rep18,rep19,rep20]
+inputs = [rep1,rep2,rep3,rep4,rep5,rep6,rep7,rep9,rep10,rep11,rep12,rep13,rep14,rep15,rep16,rep17,rep18,rep19,rep20]
 
 def diagnostic(rep1,rep5,rep6):
     if rep1 == 'Crépus' and 'Sec' in rep5 and rep6 == 'faible porosité':

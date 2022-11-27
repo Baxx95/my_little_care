@@ -93,11 +93,11 @@ rep1 = st.selectbox(
 
 rep2 = st.selectbox(
         'Vos cheveux sont actuellement :',
-         ['Lissés', 'colorés','permanentés', 'Naturels', 'Méchés'])
+         ['Lissés', 'Colorés','Permanentés', 'Naturels', 'Méchés'])
 
 rep3 = st.selectbox(
         "Quelle est l’épaisseur de vos cheveux ?",
-         ['Fins','cheveux moyennement épais','cheuveux épais'])
+         ['Fins','Cheveux moyennement épais','Cheuveux épais'])
  
 rep4 = st.selectbox(
         "Quelle est la longueur de vos cheveux ?",
@@ -105,11 +105,11 @@ rep4 = st.selectbox(
 
 rep5 = st.multiselect(
     "Comment est votre cuir chevelu ? \nSélectionnez jusqu’à 2 :",
-         ['Sec', 'Gras','Pelliculaire', 'irrité', 'Sain'])
+         ['Sec', 'Gras','Pelliculaire', 'Irrité', 'Sain'])
    
 rep6 = st.selectbox(
         'Quelle est la porosité de vos cheveux ?',
-         ['faible porosité','porosité normale','forte porosité'])
+         ['Faible porosité','Porosité normale','Forte porosité'])
    
 rep7 = st.radio(
         'Vous a-t-on diagnostiqué une maladie du cuir chevelu ?',

@@ -97,7 +97,7 @@ rep2 = st.selectbox(
 
 rep3 = st.selectbox(
         "Quelle est l’épaisseur de vos cheveux ?",
-         ['Fins','cheveux moyennement epais','cheuveux epais'])
+         ['Fins','cheveux moyennement épais','cheuveux épais'])
  
 rep4 = st.selectbox(
         "Quelle est la longueur de vos cheveux ?",

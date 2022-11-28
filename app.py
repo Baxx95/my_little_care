@@ -219,4 +219,4 @@ if st.button('Validez'):
 
         st.write(diagnostic(rep1,rep5,rep6))
         st.write("Nous avons dans notre base d'articles", nb_prod, " produits de type ",prods[0]," et ", prods[1]," qui vous permettront d'atteindre vos objectifs.\nVeuillez prendre rendez-vous avec un de nos experts pour plus de détails sur les produts et leurs utilisations.")
-        
+        st.write("N'hésitez pas de consulter notre site [MyLittleCare](https://my-little-care.webflow.io/#Produit)")
